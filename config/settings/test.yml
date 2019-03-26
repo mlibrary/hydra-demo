@@ -1,0 +1,27 @@
+hostname: <%= ENV['APP_HOSTNAME'] || 'hyrax-test.local' %>
+
+hyrax:
+  redis_namespace: <%= ENV['REDIS_NS'] || 'hyrax-test' %>
+
+fedora:
+  url: http://127.0.0.1:<%= ENV['FCREPO_TEST_PORT'] || 8986 %>/rest
+  base_path: /hyrax-test
+
+# We specify an explicitly named test core. Make sure that config/solr_wrapper_test.yml
+# matches this if you change it and depend on the `ci` rake task. You can run Fedora and
+# Solr on any ports and namespaces manually and use .local.yml files for tests run by
+# hand, but the rake task uses what's in the file exclusively.
+solr:
+  url: http://127.0.0.1:<%= ENV['SOLR_TEST_PORT'] || 8985 %>/solr/hyrax-test
+
+ezid:
+  timeout: 10
+
+rails:
+  database:
+    # Warning: The database defined as "test" will be erased and
+    # re-generated from your development database when you run "rake".
+    # Do not set this db to the same as development or production.
+    database: db/test.sqlite3
+    timeout: 10000
+  secret_key_base: 53a5146572b7b7fdecf0dee1052c2ccc713767015a97f46ef4cb549e65c7487bbdd63389462637e89ea89f62a2303177c6436044644741c0ccd81c8188a2edf3

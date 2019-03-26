@@ -1,0 +1,19 @@
+hostname: <%= ENV['APP_HOSTNAME'] || 'hyrax.local' %>
+
+hyrax:
+  redis_namespace: <%= ENV['REDIS_NS'] || 'hyrax-dev' %>
+
+fedora:
+  url: http://127.0.0.1:<%= ENV['FCREPO_DEVELOPMENT_PORT'] || 8984 %>/rest
+  base_path: /hyrax-dev
+
+solr:
+  url: http://127.0.0.1:<%= ENV['SOLR_DEV_PORT'] || 8983 %>/solr/hyrax-dev
+
+ezid:
+  timeout: 30
+
+rails:
+  database:
+    database: db/development.sqlite3
+  secret_key_base: d19076ff1c21f6565c19dc65bbd2e44655a03e0b49bb6e05553ed65421d75d7780f9038833a6fb79087a5faa9064243d469c69e8c7a5441825b6ab10b8ee7ccd

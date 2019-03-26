@@ -8,6 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6', '>= 5.1.6.2'
+gem 'sqlite3', '~> 1.3.6'
 gem 'mysql2', '~> 0.5.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -66,3 +67,6 @@ group :development, :test do
 end
 
 gem 'riiif', '~> 2.0'
+gem 'resque', '~> 2.0'
+
+gem 'ettin', '~> 1.2'
