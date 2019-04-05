@@ -5,6 +5,7 @@
 #
 # The DATABASE_URL environment variable will always override settings files.
 
+<% require Rails.root.join('config/settings').to_s %>
 <%=
 YAML.dump({'settings' => Settings.rails.database.to_h.stringify_keys})
   .split("\n")
